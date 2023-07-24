@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Bachelor Solarmoduloptimierer</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<script src="dist/p5.js"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h4>Bachelorarbeit</h4>
+					<img class="r-stretch" src="dist/pictures/hardware1.jpg">
+					<h2>Solarmoduloptimierer</h1>
+					<p>Arne Schmidt</p>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Gliederung
+
+						- Idee & Motivation
+						- Konzept
+						- Hochsetzsteller
+						- Implementierung
+						- Algorithmen
+						- PV-Emulator
+						- Praktischer Versuch
+						- Ergebnisse
+						- Fazit
+					</textarea>
+				</section>
+				<section>
+					<h2>Idee & Motivation</h2>
+					<p class="fragment">Balkonkraftwerk</p>
+					<p class="fragment">Mikrowechselrichter</p>
+					<p class="fragment">MPP-Tracker</p>
+					<p class="fragment">frei programmierbar?</p>
+				</section>
+				<section>
+					<h2>Idee & Motivation</h4>
+					<p class="fragment highlight-red">closed source</p>
+					<p class="fragment fade-left">Eigenentwicklung</p>
+					<p class="fragment fade-left">Mikrocontroller</p>
+					<p class="fragment fade-left">Mircopython</p>
+					<p class="fragment fade-left">Leistungselektronik</p>
+					<p class="fragment grow">Solarmoduloptimierer</p>
+				</section>
+				<section data-markdown>
+						<textarea data-template>
+							## Ziel
+
+							* frei programmierbarer MPP-Tracker
+							* Plattform für einfache Entwicklung mit Micropython
+							* Untersuchung verschiedener MPPT-Algorithmen
+							* Machbarkeit untersuchen
+						</textarea>
+				  </section>
+				  <section>
+					<section data-transition="fade">
+						<h2>Konzept</h2>
+						<img class="r-stretch" src="dist/pictures/konzept1.png">
+						<h4>Leistungsanpassung</h4>
+					</section>
+					<section data-transition="fade">
+						<h2>Konzept</h2>
+						<img class="r-stretch" src="dist/pictures/konzept2.png">
+						<h4>Leistungsanpassung</h4>
+					</section>
+					<section data-transition="fade">
+						<h2>Konzept</h2>
+						<img class="r-stretch" src="dist/pictures/leistungsanpassung1.svg">
+						<h4>Leistungsanpassung</h4>
+					</section>
+					<section data-transition="fade">
+						<h2>Konzept</h2>
+						<img class="r-stretch" src="dist/pictures/leistungsanpassung2.svg">
+						<h4>Leistungsanpassung</h4>
+					</section>
+					<section data-transition="fade">
+						<h2>Konzept</h2>
+						<img class="r-stretch" src="dist/pictures/konzept3.png" >
+					</section>
+					<section data-transition="fade">
+						<h2>Konzept</h2>
+						<img class="r-stretch" src="dist/pictures/konzept4.png">
+					</section>
+					<section data-transition="fade">
+						<h2>Konzept</h2>
+						<img class="r-stretch" src="dist/pictures/konzept5.png">
+					</section>
+					<section data-transition="fade">
+						<h2>Konzept</h2>
+						<img class="r-stretch" src="dist/pictures/konzept6.png">
+					</section>
+					<section data-transition="fade">
+						<h2>Konzept</h2>
+						<img class="r-stretch" src="dist/pictures/konzept7.png">
+					</section>
+					<section data-transition="fade">
+						<h2>Konzept</h2>
+						<div id="iukenn1"></div>
+						<h4>IU-Kennlinie</h4>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Hochsetzsteller</h2>
+					</section>
+					<section data-transition="fade">
+						<h2>Hochsetzsteller</h2>
+						<p>Schaltbild</p>
+						<img class="r-stretch" src="dist/pictures/boost1.svg">
+					</section>
+					<section data-transition="fade">
+						<h2>Hochsetzsteller</h2>
+						<p>Einschaltzeit $dT_{s}$</p>
+						<img class="r-stretch" src="dist/pictures/boost2.svg">
+					</section>
+					<section data-transition="fade">
+						<h2>Hochsetzsteller</h2>
+						<p>Ausschaltzeit $(1-d)T_{s}$</p>
+						<img class="r-stretch" src="dist/pictures/boost3.svg">
+					</section>
+					<section data-transition="fade">
+						<h2>Hochsetzsteller</h2>
+						<img src="dist/pictures/timing1.svg" width="800">
+					</section>
+					<section data-transition="fade">
+						<h2>Hochsetzsteller</h2>
+						<p>Eingangswiderstand</p>
+						<img class="r-stretch" src="dist/pictures/boost_Rin.svg">
+					</section>
+					<section>
+						<h2>Hochsetzsteller</h2>
+						<p>
+							maximales Tastverhältnis
+							$$ d_{max} = 1 - \frac{U_{in}}{U_{out}} = 1 - \frac{15V}{50V} = 0,7 $$
+						</p>
+						<p>
+							minimales Tastverhältnis
+							$$ d_{min} = 1 - \left(\frac{U_{in}}{U_{out}}\right) \cdot (1-d_{max}) \\
+							1 - \left(\frac{30V}{15V}\right) \cdot (1-0,7) = 0,4 $$
+						</p>
+					</section>
+					<section>
+						<h2>Hochsetzsteller</h2>
+						<p>
+							Spule
+							$$ L = \frac{U_{max}d_{min}}{\Delta i_{L} f_{s}} = 
+							\frac{30V \cdot 0,4}{2,5A \cdot 50 kHz} = 96 \mu H $$
+						</p>
+						<p>
+							Ausgangskondensator
+							$$ C_{out} = \frac{I_{out}D_{max}}{\Delta U_{out} f_{s}} = 
+							\frac{2A \cdot 0,7}{0,1V \cdot 50 kHz} = 280 \mu F $$
+						</p>
+					</section>
+				</section>
+				<section>
+					<h2>Implementierung</h2>
+					<img class="r-stretch" src="dist/pictures/schaltplan_alt.png">
+					<br>erster Schaltplan</br>
+				</section>
+				<section>
+					<h2>Implementierung</h2>
+					<img class="r-stretch" src="dist/pictures/schaltplan_final.png">
+					<br>finaler Schaltplan</br>
+				</section>
+				<section>
+					<section>
+						<h2>Mikrocontroller</h2>
+					</section>
+					<section>
+						<h2>Mikrocontroller</h2>
+						<ul>
+							<li>Raspberry Pi Pico RP2040</li>
+							<li>26 GPIO Pins</li>
+							<li>4 Analog-Digital-Wandler</li>
+							<li>16 Pulsweitenmodulation</li>
+							<li>großer Flashspeicher</li>
+							<li>gute Dokumentation</li>
+							<li>Micropython</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Mikrocontroller</h2>
+						<div class="r-stack">
+							<img class="fragment current-visible" src="dist/pictures/pico.jpg">
+							<img class="fragment current-visible" src="dist/pictures/rp2040.jpg">
+							<img class="fragment current-visible" src="dist/pictures/rp2040.svg">
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Spannungsmessung</h2>
+					</section>
+					<section>
+						<h2>Spannungsmessung</h2>
+						<img class="r-stretch" src="dist/pictures/spannungsteiler.svg" height="500">
+						<p>Spannungsteiler</p>
+					</section>
+					<section>
+						<h2>Spannungsmessung</h2>
+						<p>
+							\[\begin{aligned}
+								U_{out} = U_{in}\frac{R_{2}}{R_{1}+R_{2}} \\\\
+								0V < U_{in/out} < 50V \\
+								0V < U_{adc} < 3.3V \\\\
+								R_{1} = 36k \\
+								R_{2} = 2,2k
+							\end{aligned} \]
+						</p>
+					</section>
+					<section>
+						<h2>Spannungsmessung</h2>
+						<img class="r-stretch" src="dist/pictures/spannungsteiler.jpg">
+					</section>
+					<section>
+						<h2>Spannungsmessung</h2>
+						<p>Umrechnungsfunktion ADC:</p>
+						<span>
+							\[\begin{aligned}
+							U_{digital} = U_{analog} \cdot \frac{U_{sys}}{Auflösung ADC}
+							\end{aligned} \]
+						</span>
+						<pre><code class="language-python" data-trim data-noescape data-line-numbers="1|3-4|6|8-10">
+							from machine import Pin, ADC
+
+							adcScaleFac = 3.2 / 2**16
+							voltDiv = 36 / 2.2
+
+							adc1 = ADC(Pin(26))
+
+							while(True):
+								voltage = adc1.read_u16() * adcScaleFac * voltDiv
+								print(voltage)
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Strommessung</h2>
+					</section>
+
+					<section>
+						<h2>Strommessung</h2>
+						<img class="r-stretch" src="dist/pictures/tmcs1108_ohne.svg">
+						<p>Hall Effekt Sensor</p>
+					</section>
+					<section>
+						<h2>Strommessung</h2>
+						<img class="r-stretch" src="dist/pictures/tmcs1108_layout.png">
+					</section>
+					<section>
+						<h2>Strommessung</h2>
+						<img class="r-stretch" src="dist/pictures/tmcs_bild.jpg">
+					</section>
+					<section>
+						<h2>Strommessung</h2>
+						<p>Transferfunktion:</p>
+						<span>
+							\[\begin{aligned}
+								U_{out} = I_{in} \cdot S + U_{out,0A}
+							\end{aligned} \]
+						</span>
+						<pre><code class="language-python" data-trim data-noescape data-line-numbers="3|5-7|8|10|11">
+							from machine import ADC, Pin
+
+							adc = ADC(Pin(27))
+							
+							sensivity = 0.2 
+							zero_current_output = 3.2 * 0.5
+							adcScaleFac = 3.2 / 2**16
+							
+							while(True):
+								voltage = adc.read_u16() * adcScaleFac
+								current = (voltage - zero_current_output) / sensivity
+								print(current)							
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Filter</h2>
+					</section>
+					<section>
+						<h2>Tiefpassfilter</h2>
+						<img class="r-stretch" src="dist/pictures/tiefpass.svg">
+					</section>
+					<section>
+						<h2>Tiefpassfilter</h2>
+						<p>Problem: rauschendes Signal</p>
+						<span>
+							$$ C_{filter} = \frac{1}{2\pi R_{filter} f_{c}} $$
+							$$ R_{filter} = 10k $$
+							$$ f_{c} = 75 Hz $$
+							$$ \rightarrow C_{filter} = 220 nF $$
+						</span>
+					</section>
+					<section>
+						<h2>Tiefpassfilter</h2>
+						<img class="r-stretch" src="dist/pictures/tmcs1108.svg">
+					</section>
+					<section>
+						<h2>Software Filter</h2>
+						<p>Pythoncode:</p>
+						<pre><code class="language-python" data-trim data-noescape data-line-numbers="7|8-9|10">
+							class FilterAvg():
+							def __init__(self, adc: ADC, samples: int):
+								self.buf = 0.
+								self.samples = samples
+								self.adc = adc
+						
+							def calc(self):
+								for sample in range(self.samples):
+									self.buf += self.adc.read_u16()
+								filtered = self.buf/self.samples
+								self.buf = 0.
+								return(filtered)						
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Mosfet und Treiber</h2>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Mosfet
+							Auswahlkriterien
+							- DS(on) Widerstand: `$ R_{DS(on)} $`
+							- maximale Drain-Source Spannung: `$ U_{DSS} $`
+							- maximale Gate-Source Spannung: `$ U_{GS_{max}} $`
+							- Gate-Ladung: `$ Q_{gs_{max}} $`
+						</textarea>
+					</section>
+					<section>
+						<h2>Mosfet und Treiber</h2>
+						<img class="r-stretch" src="dist/pictures/ir2104.svg">
+					</section>
+					<section>
+						<h2>Mosfet und Treiber</h2>
+						<img class="r-stretch" src="dist/pictures/mosfet.jpg">
+					</section>
+					<section>
+						<h2>Pulsweitenmodulation</h2>
+						<p>Pythoncode:</p>
+						<pre><code class="language-python" data-trim data-noescape data-line-numbers="1|3-5|7-8|10-13">
+							from machine import Pin, PWM
+
+							pwm = PWM(Pin(6))  
+							pwm.freq(50000)
+							pwm.duty_u16(35000)
+
+							enable = Pin(7, Pin.OUT)
+							enable.on()
+							
+							def setDutyCycle(self, duty):
+								'''Set mosfet dutycycle for boost converter'''
+								self.duty = int(((100 - duty) / 100) * 65536)
+								self.pwm.duty_u16(self.duty)
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Snubbercircuit</h2>
+					</section>
+					<section>
+						<h2>Snubbercircuit</h2>
+						<img class="r-stretch" src="dist/pictures/snubber1.svg">
+					</section>
+					<section>
+						<h2>Snubbercircuit</h2>
+						<img class="r-stretch" src="dist/pictures/snubber2.svg">
+					</section>
+					<section>
+						<h2>Snubbercircuit</h2>
+						<img class="r-stretch" src="dist/pictures/snubber-ring.png">
+					</section>
+				</section>
+				<section>
+					<h2>Implementierung</h2>
+					<div class="r-stack">
+						<img class="fragment" src="dist/pictures/Layout.svg" height="700">
+						<img class="fragment" src="dist/pictures/smd1.jpg">
+						<img class="fragment" src="dist/pictures/smd2.jpg">
+						<img class="fragment" src="dist/pictures/smd3.jpg">
+						<img class="fragment" src="dist/pictures/smd4.jpg">
+					</div>
+				</section>
+				<section>
+					<h2>Algorithmen</h2>
+				</section>
+				<section>
+					<section>
+						<h2>Algorithmen</h2>
+						<h4>Observe & Perturb</h4>
+						<img class="r-stretch" src="dist/pictures/observeperturbflow.svg">
+					</section>
+					<section>
+						<h2>Algorithmen</h2>
+						<h4>Observe & Perturb</h4>
+						<pre><code class="language-python" data-trim data-noescape
+														data-line-numbers="2-3|4-5|6-7|9-18|20-21">
+							while(True):
+								device.getfilteredADC()
+								device.calcADCData()
+								power_delta = device.power[0] - power_pre
+								voltage_delta = device.voltage[0] - voltage_pre
+								power_pre = device.power[0]
+								voltage_pre = device.voltage[0]
+
+								if power_delta >= 0:
+									if voltage_delta > 0:
+										device.vRef -= 1
+									else:
+										device.vRef += 1
+								elif power_delta < 0:
+									if voltage_delta > 0:
+										device.vRef += 1
+									else:
+										device.vRef -= 1
+
+								device.vRef = clamp(device.vRef)
+								device.setDutyCycle(device.vRef)
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Algorithmen</h2>
+						<h4>IU-Scanner</h4>
+					</section>
+					<section>
+						<h2>Algorithmen</h2>
+						<h4>IU-Scanner</h4>
+						<pre><code class="language-python" data-trim data-noescape
+							data-line-numbers="1|3-4|5|7-8|10|16-18|20|22">
+							power_curve =[] 
+
+							while(True):
+								for duty in range(70):
+									device.setDutyCycle(duty)
+									time.sleep_ms(50)
+									device.getfilteredADC()
+									device.calcADCData()
+									time.sleep_ms(50)
+									power_curve.append(device.power[0])
+									device.printOut()
+									if device.voltage[0] < 12:
+										print('Abbruch ', device.voltage[0])
+										break
+
+								power_max = max(power_curve)
+								duty_max = power_curve.index(power_max)
+								power_curve.clear()
+								time.sleep_ms(500)
+								devive.setDutyCycle(duty_max)
+								print('power_max:{}W duty_max:{}'.format(power_max, duty_max))
+								time.sleep(10)
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>PV-Emulator</h2>
+					</section>
+					<section>
+						<h2>PV-Emulator</h2>
+						<img class="r-stretch" src="dist/pictures/pv_emulator1.svg">						
+					</section>
+					<section>
+						<h2>PV-Emulator</h2>
+						<img class="r-stretch" src="dist/pictures/pv-emu1.svg">						
+					</section>
+					<section>
+						<h2>PV-Emulator</h2>
+						<p>verschattet</p>
+						<img class="r-stretch" src="dist/pictures/pv_emulator2.svg">						
+					</section>
+					<section>
+						<h2>PV-Emulator</h2>
+						<p>verschattet</p>
+						<img class="r-stretch" src="dist/pictures/pv-emu2.svg">						
+					</section>
+					<section>
+						<h2>PV-Emulator</h2>
+						<img class="r-stretch" src="dist/pictures/pvemulator.jpg">						
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Praktischer Versuch</h2>
+					</section>
+					<section>
+						<h2>Perturb & Observe</h2>
+						<p>nicht verschattet</p>
+						<img class="r-stretch" src="dist/pictures/pv-emu-perturb.svg">
+					</section>
+					<section>
+						<h2>Perturb & Observe</h2>
+						<p>verschattet</p>
+						<img class="r-stretch" src="dist/pictures/pv-emu-perturb_verschattet.svg">
+					</section>
+					<section>
+						<h2>IU-Scanner</h2>
+						<p>nicht verschattet</p>
+						<img class="r-stretch" src="dist/pictures/pv-emu-iu-scanner-unverschattet.svg">
+					</section>
+					<section>
+						<h2>IU-Scanner</h2>
+						<p>verschattet</p>
+						<img class="r-stretch" src="dist/pictures/pv-emu-iu-scanner-verschattet.svg">
+					</section>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Fazit
+
+						- Machbarkeit bewiesen
+						- Mircopython ist gut
+					</textarea>
+				</section>
+				<section>
+					<h2>Abschluss</h2>
+						<div class="r-stack">
+							<img class="fragment" src="dist/pictures/hardware1.jpg">
+							<img class="fragment" src="dist/pictures/hardware2.jpg">
+						</div>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="dist/iu-kennlinie.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
+</html>
