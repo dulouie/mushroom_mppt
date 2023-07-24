@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="127.035pt" height="287.074031pt" viewBox="0 0 127.035 287.074031" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2023-07-21T14:45:24.652715</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.7.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 287.074031 
+L 127.035 287.074031 
+L 127.035 0 
+L 0 0 
+L 0 287.074031 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 64.485 139.762031 
+L 75.735 128.512031 
+L 118.485 128.512031 
+L 118.485 151.012031 
+L 75.735 151.012031 
+L 64.485 139.762031 
+z
+" clip-path="url(#p2d6e2100f7)" style="fill: none; stroke: #000000; stroke-width: 0.75; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 28.485 31.762031 
+L 28.485 17.362031 
+" clip-path="url(#p2d6e2100f7)" style="fill: none; stroke: #000000; stroke-width: 0.75; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 28.485 17.362031 
+L 21.735 17.362031 
+" clip-path="url(#p2d6e2100f7)" style="fill: none; stroke: #000000; stroke-width: 0.75; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 28.485 17.362031 
+L 35.235 17.362031 
+" clip-path="url(#p2d6e2100f7)" style="fill: none; stroke: #000000; stroke-width: 0.75; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 28.485 31.762031 
+L 28.485 67.762031 
+L 37.485 67.762031 
+L 37.485 103.762031 
+L 19.485 103.762031 
+L 19.485 67.762031 
+L 28.485 67.762031 
+M 28.485 103.762031 
+L 28.485 139.762031 
+" clip-path="url(#p2d6e2100f7)" style="fill: none; stroke: #000000; stroke-width: 0.75; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 28.485 139.762031 
+L 28.485 175.762031 
+L 37.485 175.762031 
+L 37.485 211.762031 
+L 19.485 211.762031 
+L 19.485 175.762031 
+L 28.485 175.762031 
+M 28.485 211.762031 
+L 28.485 247.762031 
+" clip-path="url(#p2d6e2100f7)" style="fill: none; stroke: #000000; stroke-width: 0.75; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 28.485 247.762031 
+L 28.485 262.162031 
+L 19.485 262.162031 
+L 37.485 262.162031 
+M 22.185 266.482031 
+L 34.785 266.482031 
+M 26.685 270.802031 
+L 30.285 270.802031 
+" clip-path="url(#p2d6e2100f7)" style="fill: none; stroke: #000000; stroke-width: 0.75; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 28.485 139.762031 
+L 46.485 139.762031 
+L 64.485 139.762031 
+" clip-path="url(#p2d6e2100f7)" style="fill: none; stroke: #000000; stroke-width: 0.75; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <!-- $U_{in}$ -->
+    <g transform="translate(21.135 11.578359)">
+     <text>
+      <tspan style="font: oblique 10.5px 'DejaVu Sans'" x="0" y="-0.984375">U</tspan>
+      <tspan style="font: oblique 7.35px 'DejaVu Sans'" x="7.685303 9.727368" y="0.8203125">in</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_2">
+    <!-- $R_{1}$ -->
+    <g transform="translate(3.6 88.659375)">
+     <text>
+      <tspan style="font: oblique 10.5px 'DejaVu Sans'" x="0" y="-0.984375">R</tspan>
+      <tspan style="font: 7.35px 'DejaVu Sans'" x="7.295654" y="0.8203125">1</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_3">
+    <!-- $R_{2}$ -->
+    <g transform="translate(3.6 196.659375)">
+     <text>
+      <tspan style="font: oblique 10.5px 'DejaVu Sans'" x="0" y="-0.984375">R</tspan>
+      <tspan style="font: 7.35px 'DejaVu Sans'" x="7.295654" y="0.8203125">2</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_4">
+    <!-- $U_{pv\:adc}$ -->
+    <g transform="translate(75.5775 141.967031)">
+     <text>
+      <tspan style="font: oblique 10.5px 'DejaVu Sans'" x="0" y="-0.984375">U</tspan>
+      <tspan style="font: oblique 7.35px 'DejaVu Sans'" x="7.685303 12.35083 18.291586 22.795614 27.461141" y="0.8203125">pvadc</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 28.485 142.462031 
+C 29.201048 142.462031 29.887866 142.177542 30.394188 141.67122 
+C 30.900511 141.164897 31.185 140.47808 31.185 139.762031 
+C 31.185 139.045983 30.900511 138.359166 30.394188 137.852843 
+C 29.887866 137.34652 29.201048 137.062031 28.485 137.062031 
+C 27.768952 137.062031 27.082134 137.34652 26.575812 137.852843 
+C 26.069489 138.359166 25.785 139.045983 25.785 139.762031 
+C 25.785 140.47808 26.069489 141.164897 26.575812 141.67122 
+C 27.082134 142.177542 27.768952 142.462031 28.485 142.462031 
+z
+" clip-path="url(#p2d6e2100f7)" style="stroke: #000000; stroke-width: 0.75; stroke-linejoin: miter"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p2d6e2100f7">
+   <rect x="14.535" y="4.690031" width="108.9" height="278.784"/>
+  </clipPath>
+ </defs>
+</svg>
