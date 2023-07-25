@@ -15,22 +15,26 @@ let sketch3 = function(p){
     300,
     350,
     400,
-    410,
-    420];
+    450,
+    500,
+    550,
+    600];
 
-  let current = [300,
-    300,
-    290,
-    290,
-    280,
-    270,
-    250,
+  let current = [390,
+    390,
+    370,
     200,
-    100,
-    60];
+    150,
+    150,
+    145,
+    145,
+    141,
+    140,
+    120,
+    0];
 
   p.setup = function() {
-    let canvas = p.createCanvas(p.windowWidth, p.windowWidth * worldAspect);
+    let canvas = p.createCanvas(worldWidth, worldHeight);
     canvas.parent('mpptcalc2');
     p.collideDebug(false);
   }
@@ -41,7 +45,7 @@ let sketch3 = function(p){
     p.background(255);
     
     let myDegrees = p.map(wMouseY(p.mouseY), 0, p.height, 0, 70);
-    let v = p5.Vector.fromAngle(p.radians(myDegrees), 500);
+    let v = p5.Vector.fromAngle(p.radians(myDegrees), 1000);
     let vx = v.x;
     let vy = v.y;
     
@@ -57,6 +61,11 @@ let sketch3 = function(p){
       wp1 = p1;
       wp2 = p2;
     }
+
+    p.stroke('black');
+    p.strokeWeight(6);
+    p.line(0,0,600,0);
+    p.line(0,0,0,400);
   }
 
   function drawLines(p1,p2,p3,p4){

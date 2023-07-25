@@ -1,5 +1,5 @@
 let sketch2 = function(p){
-  let worldWidth = 640
+  let worldWidth = 600
   let worldHeight = 400
   let worldAspect = (worldHeight/worldWidth);
   let hit = false;
@@ -15,14 +15,14 @@ let sketch2 = function(p){
     300,
     350,
     400,
-    410,
-    420];
+    405,
+    410];
 
   let current = [300,
     300,
     290,
     290,
-    280,
+    290,
     270,
     250,
     200,
@@ -30,7 +30,7 @@ let sketch2 = function(p){
     60];
 
   p.setup = function() {
-    let canvas = p.createCanvas(p.windowWidth, p.windowWidth * worldAspect);
+    let canvas = p.createCanvas(worldWidth, worldHeight);
     canvas.parent('mpptcalc1');
     p.collideDebug(false);
   }
@@ -57,7 +57,16 @@ let sketch2 = function(p){
       wp1 = p1;
       wp2 = p2;
     }
+
+    p.stroke('black');
+    p.strokeWeight(6);
+    p.line(0,0,600,0);
+    p.line(0,0,0,400);
   }
+
+  //p.windowResized = function() {
+  //  p.resizeCanvas(p.windowWidth, p.windowHeight);
+  //}
 
   function drawLines(p1,p2,p3,p4){
     hit = p.collideLineLineVector(p1,p2,p3,p4, true);
