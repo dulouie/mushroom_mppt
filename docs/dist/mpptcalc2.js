@@ -22,11 +22,11 @@ let sketch3 = function(p){
 
   let current = [390,
     390,
-    370,
-    200,
-    150,
-    150,
-    145,
+    389,
+    387,
+    386,
+    340,
+    175,
     145,
     141,
     140,
@@ -84,7 +84,7 @@ let sketch3 = function(p){
       p.textSize(32);
       volts = p.round(p.map(hit.x,0,500,0,30),1);
       currents = p.round(p.map(hit.y,0,300,0,5),1);
-      watts = p.floor(volts*currents);
+      watts = p.round(volts*currents,1);
       p.stroke(0,0,0,255);
       p.text(watts + ' W', 450, -300);
       p.text(volts + ' V', 450, -250);
