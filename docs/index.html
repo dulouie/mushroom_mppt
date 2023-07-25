@@ -13,6 +13,7 @@
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 		<script src="dist/p5.js"></script>
+		<script defer src="https://unpkg.com/p5.collide2d"></script>
 	</head>
 	<body>
 		<div class="reveal">
@@ -436,6 +437,11 @@
 								device.setDutyCycle(device.vRef)
 						</code></pre>
 					</section>
+					<section>
+						<h2>Algorithmen</h2>
+						<h4>Observe & Perturb</h4>
+						<div id="mpptcalc1"></div>
+					</section>
 				</section>
 				<section>
 					<section>
@@ -470,6 +476,11 @@
 								print('power_max:{}W duty_max:{}'.format(power_max, duty_max))
 								time.sleep(10)
 						</code></pre>
+					</section>
+					<section>
+						<h2>Algorithmen</h2>
+						<h4>IU-Scanner</h4>
+						<div id="mpptcalc2"></div>
 					</section>
 				</section>
 				<section>
@@ -547,7 +558,7 @@
 					</textarea>
 				</section>
 				<section>
-					<h2>Abschluss</h2>
+					<h2>Danke für Ihre Aufmerksamkeit!</h2>
 						<div class="r-stack">
 							<img class="fragment" src="dist/pictures/hardware1.jpg">
 							<img class="fragment" src="dist/pictures/hardware2.jpg">
@@ -558,6 +569,8 @@
 
 		<script src="dist/reveal.js"></script>
 		<script src="dist/iu-kennlinie.js"></script>
+		<script src="dist/mpptcalc.js"></script>
+		<script src="dist/mpptcalc2.js"></script>
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
