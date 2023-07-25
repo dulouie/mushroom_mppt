@@ -44,7 +44,7 @@ let sketch = function(p) {
   }
 
   p.keyPressed = function(){
-    if (p.keyCode === ENTER) {
+    if (p.keyCode === p.ENTER) {
       if (mpp == false){
         mpp = true;
       } else {
