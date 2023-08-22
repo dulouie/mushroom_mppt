@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Bachelor Solar module optimizer</title>
+		<title>Bachelor Solarmoduloptimierer</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -20,173 +20,174 @@
 			<div class="slides">
 				<section>
 					<img  src="dist/pictures/OTH_logo.png" width="300">
-					<h4>Bachelor thesis</h4>
+					<h4>Bachelorarbeit</h4>
 					<p><img  src="dist/pictures/hardware1.jpg" width="250"></p>
-					<h2>Solar module optimizer</h1>
+					<h2>Solarmoduloptimierer</h1>
 					<p>Arne Schmidt</p>
 				</section>
 				<section data-markdown>
 					<textarea data-template>
-						## Outline
+						## Gliederung
 
-						- Idea & Motivation
-						- Concept
-						- Implementation
-						- Algorithms
-						- PV Emulator
-						- Practical experiment
-						- Conclusion
+						- Idee & Motivation
+						- Konzept
+						- Implementierung
+						- Algorithmen
+						- PV-Emulator
+						- Praktischer Versuch
+						- Fazit
 					</textarea>
 				</section>
 				<section>
-					<p class="fragment">Balcony power plant</p>
-					<p class="fragment">Microinverter</p>
-					<p class="fragment">MPP tracker</p>
-					<p class="fragment">Free programmable?</p>
+					<h2>Idee & Motivation</h2>
+					<p class="fragment">Balkonkraftwerk</p>
+					<p class="fragment">Mikrowechselrichter</p>
+					<p class="fragment">MPP-Tracker</p>
+					<p class="fragment">frei programmierbar?</p>
 				</section>
 				<section>
-					<h2>Idea & motivation</h4>
-						<p class="fragment highlight-red">Geschlossene Quelle</p>
-						<p class="fragment fade-left">Eigenentwicklung</p>
-						<p class="fragment fade-left">Mikrocontroller</p>
-						<p class="fragment fade-left">Mircopython</p>
-						<p class="fragment fade-left">Leistungselektronik</p>
-						<p class="fragment grow">Solarmoduloptimierer</p>
-					</section>
+					<h2>Idee & Motivation</h4>
+					<p class="fragment highlight-red">closed source</p>
+					<p class="fragment fade-left">Eigenentwicklung</p>
+					<p class="fragment fade-left">Mikrocontroller</p>
+					<p class="fragment fade-left">Mircopython</p>
+					<p class="fragment fade-left">Leistungselektronik</p>
+					<p class="fragment grow">Solarmoduloptimierer</p>
+				</section>
 				<section data-markdown>
 						<textarea data-template>
-							## Target
+							## Ziel
 
-							* freely programmable MPP tracker
-							* platform for easy development with Micropython
-							* Investigation of different MPPT algorithms
-							* investigate feasibility
+							* frei programmierbarer MPP-Tracker
+							* Plattform für einfache Entwicklung mit Micropython
+							* Untersuchung verschiedener MPPT-Algorithmen
+							* Machbarkeit untersuchen
 						</textarea>
 				  </section>
 				  <section>
 					<section data-transition="fade">
-						<h2>Concept</h2>
-						<img class="r-stretch" src="dist/pictures/concept1.png">
-						<h4>Performance adjustment</h4>
+						<h2>Konzept</h2>
+						<img class="r-stretch" src="dist/pictures/konzept1.png">
+						<h4>Leistungsanpassung</h4>
 					</section>
 					<section data-transition="fade">
-						<h2>Concept</h2>
-						<img class="r-stretch" src="dist/pictures/concept2.png">
-						<h4>Performance adjustment</h4>
+						<h2>Konzept</h2>
+						<img class="r-stretch" src="dist/pictures/konzept2.png">
+						<h4>Leistungsanpassung</h4>
 					</section>
 					<section data-transition="fade">
-						<h2>Concept</h2>
-						<img class="r-stretch" src="dist/pictures/performance-matching1.svg">
-						<h4>Power adjustment</h4>
+						<h2>Konzept</h2>
+						<img class="r-stretch" src="dist/pictures/leistungsanpassung1.svg">
+						<h4>Leistungsanpassung</h4>
 					</section>
 					<section data-transition="fade">
-						<h2>Concept</h2>
-						<img class="r-stretch" src="dist/pictures/performance-matching2.svg">
-						<h4>Power adjustment</h4>
+						<h2>Konzept</h2>
+						<img class="r-stretch" src="dist/pictures/leistungsanpassung2.svg">
+						<h4>Leistungsanpassung</h4>
 					</section>
 					<section data-transition="fade">
-						<h2>Concept</h2>
-						<img class="r-stretch" src="dist/pictures/concept3.png" >
+						<h2>Konzept</h2>
+						<img class="r-stretch" src="dist/pictures/konzept3.png" >
 					</section>
 					<section data-transition="fade">
-						<h2>Concept</h2>
+						<h2>Konzept</h2>
 						<img class="r-stretch" src="dist/pictures/konzept4.png">
 					</section>
 					<section data-transition="fade">
-						<h2>Concept</h2>
+						<h2>Konzept</h2>
 						<img class="r-stretch" src="dist/pictures/konzept5.png">
 					</section>
 					<section data-transition="fade">
-						<h2>Concept</h2>
+						<h2>Konzept</h2>
 						<img class="r-stretch" src="dist/pictures/konzept6.png">
 					</section>
 					<section data-transition="fade">
-						<h2>Concept</h2>
+						<h2>Konzept</h2>
 						<img class="r-stretch" src="dist/pictures/konzept7.png">
 					</section>
 					<section data-transition="fade">
-						<h2>Concept</h2>
+						<h2>Konzept</h2>
 						<div id="iukenn1"></div>
-						<p>Interactive with mouse and enter</p>
+						<p>Interaktiv mit Maus und Enter</p>
 					</section>
 				</section>
 				<section>
 					<section>
-						<h2>High setting adjuster</h2>
+						<h2>Hochsetzsteller</h2>
 					</section>
 					<section data-transition="fade">
-						<h2>Boost converter</h2>
-						<p>Circuit diagram</p>
+						<h2>Hochsetzsteller</h2>
+						<p>Schaltbild</p>
 						<img class="r-stretch" src="dist/pictures/boost1.svg">
 					</section>
 					<section data-transition="fade">
-						<h2>Boost converter</h2>.
-						<p>On time $dT_{s}$</p>
+						<h2>Hochsetzsteller</h2>
+						<p>Einschaltzeit $dT_{s}$</p>
 						<img class="r-stretch" src="dist/pictures/boost2.svg">
 					</section>
 					<section data-transition="fade">
-						<h2>Boost converter</h2>.
-						<p>Turn-off time $(1-d)T_{s}$</p>
+						<h2>Hochsetzsteller</h2>
+						<p>Ausschaltzeit $(1-d)T_{s}$</p>
 						<img class="r-stretch" src="dist/pictures/boost3.svg">
 					</section>
 					<section data-transition="fade">
-						<h2>Boost converter</h2>
+						<h2>Hochsetzsteller</h2>
 						<img src="dist/pictures/timing1.svg" width="800">
 					</section>
 					<section data-transition="fade">
-						<h2>Boost converter</h2>
-						<p>Input resistance</p>
+						<h2>Hochsetzsteller</h2>
+						<p>Eingangswiderstand</p>
 						<img class="r-stretch" src="dist/pictures/boost_Rin.svg">
 					</section>
 					<section>
-						<h2>Boost converter</h2>
+						<h2>Hochsetzsteller</h2>
 						<p>
-							max dutycycle
+							maximales Tastverhältnis
 							$$ d_{max} = 1 - \frac{U_{in}}{U_{out}} = 1 - \frac{15V}{50V} = 0,7 $$
 						</p>
 						<p>
-							min dutycycle
+							minimales Tastverhältnis
 							$$ d_{min} = 1 - \left(\frac{U_{in}}{U_{out}}\right) \cdot (1-d_{max}) \\
 							1 - \left(\frac{30V}{15V}\right) \cdot (1-0,7) = 0,4 $$
 						</p>
 					</section>
 					<section>
-						<h2>Boost converter</h2>
+						<h2>Hochsetzsteller</h2>
 						<p>
-							Inductor
+							Spule
 							$$ L = \frac{U_{max}d_{min}}{\Delta i_{L} f_{s}} = 
 							\frac{30V \cdot 0,4}{2,5A \cdot 50 kHz} = 96 \mu H $$
 						</p>
 						<p>
-							Output Capacitor
+							Ausgangskondensator
 							$$ C_{out} = \frac{I_{out}D_{max}}{\Delta U_{out} f_{s}} = 
 							\frac{2A \cdot 0,7}{0,1V \cdot 50 kHz} = 280 \mu F $$
 						</p>
 					</section>
 				</section>
 				<section>
-					<h2>Implementation</h2>
+					<h2>Implementierung</h2>
 					<img class="r-stretch" src="dist/pictures/schaltplan_alt.png">
-					<br>first schematic</br>
+					<br>erster Schaltplan</br>
 				</section>
 				<section>
-					<h2>Implementation</h2>
+					<h2>Implementierung</h2>
 					<img class="r-stretch" src="dist/pictures/schaltplan_final.png">
-					<br>final schematic</br>
+					<br>finaler Schaltplan</br>
 				</section>
 				<section>
 					<section>
-						<h2>Microcontroller</h2>
+						<h2>Mikrocontroller</h2>
 					</section>
 					<section>
-						<h2>Microcontroller</h2>
+						<h2>Mikrocontroller</h2>
 						<ul>
 							<li>Raspberry Pi Pico RP2040</li>
 							<li>26 GPIO Pins</li>
-							<li>4 Analog-Digital-Converter</li>
-							<li>16 pulse width modulation</li>
-							<li>big flash storage</li>
-							<li>greate documentation</li>
+							<li>4 Analog-Digital-Wandler</li>
+							<li>16 Pulsweitenmodulation</li>
+							<li>großer Flashspeicher</li>
+							<li>gute Dokumentation</li>
 							<li>Micropython</li>
 						</ul>
 					</section>
@@ -201,15 +202,15 @@
 				</section>
 				<section>
 					<section>
-						<h2>Voltage measurement</h2>
+						<h2>Spannungsmessung</h2>
 					</section>
 					<section>
-						<h2>Voltage measurement</h2>
+						<h2>Spannungsmessung</h2>
 						<img class="r-stretch" src="dist/pictures/spannungsteiler.svg" height="500">
-						<p>Voltage divider</p>
+						<p>Spannungsteiler</p>
 					</section>
 					<section>
-						<h2>Voltage measurement</h2>
+						<h2>Spannungsmessung</h2>
 						<p>
 							\[\begin{aligned}
 								U_{out} = U_{in}\frac{R_{2}}{R_{1}+R_{2}} \\\\
@@ -221,12 +222,12 @@
 						</p>
 					</section>
 					<section>
-						<h2>Voltage measurement</h2>
+						<h2>Spannungsmessung</h2>
 						<img class="r-stretch" src="dist/pictures/spannungsteiler.jpg">
 					</section>
 					<section>
-						<h2>Voltage measurement</h2>
-						<p>Translate function ADC:</p>
+						<h2>Spannungsmessung</h2>
+						<p>Umrechnungsfunktion ADC:</p>
 						<span>
 							\[\begin{aligned}
 							U_{digital} = U_{analog} \cdot \frac{U_{sys}}{Auflösung ADC}
@@ -248,25 +249,25 @@
 				</section>
 				<section>
 					<section>
-						<h2>Current measurement</h2>
+						<h2>Strommessung</h2>
 					</section>
 
 					<section>
-						<h2>Current measurement</h2>
+						<h2>Strommessung</h2>
 						<img class="r-stretch" src="dist/pictures/tmcs1108_ohne.svg">
 						<p>Hall Effekt Sensor</p>
 					</section>
 					<section>
-						<h2>Current measurement</h2>
+						<h2>Strommessung</h2>
 						<img class="r-stretch" src="dist/pictures/tmcs1108_layout.png">
 					</section>
 					<section>
-						<h2>Current measurement</h2>
+						<h2>Strommessung</h2>
 						<img class="r-stretch" src="dist/pictures/tmcs_bild.jpg">
 					</section>
 					<section>
-						<h2>Current measurement</h2>
-						<p>Transferfunction:</p>
+						<h2>Strommessung</h2>
+						<p>Transferfunktion:</p>
 						<span>
 							\[\begin{aligned}
 								U_{out} = I_{in} \cdot S + U_{out,0A}
@@ -293,12 +294,12 @@
 						<h2>Filter</h2>
 					</section>
 					<section>
-						<h2>Lowpassfilter</h2>
+						<h2>Tiefpassfilter</h2>
 						<img class="r-stretch" src="dist/pictures/tiefpass.svg">
 					</section>
 					<section>
-						<h2>Lowpassfilter</h2>
-						<p>Problem: noisey signal</p>
+						<h2>Tiefpassfilter</h2>
+						<p>Problem: rauschendes Signal</p>
 						<span>
 							$$ C_{filter} = \frac{1}{2\pi R_{filter} f_{c}} $$
 							$$ R_{filter} = 10k $$
@@ -307,7 +308,7 @@
 						</span>
 					</section>
 					<section>
-						<h2>Lowpassfilter</h2>
+						<h2>Tiefpassfilter</h2>
 						<img class="r-stretch" src="dist/pictures/tmcs1108.svg">
 					</section>
 					<section>
@@ -331,28 +332,28 @@
 				</section>
 				<section>
 					<section>
-						<h2>Mosfet and Driver</h2>
+						<h2>Mosfet und Treiber</h2>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
 							## Mosfet
-							Selection criteria
-							- DS(on) resistance: `$ R_{DS(on)} $`
-							- maximum drain-source voltage: `$ U_{DSS} $`
-							- maximum gate source voltage: `$ U_{GS_{max}} $`
-							- gate charge: `$ Q_{gs_{max}} $`
+							Auswahlkriterien
+							- DS(on) Widerstand: `$ R_{DS(on)} $`
+							- maximale Drain-Source Spannung: `$ U_{DSS} $`
+							- maximale Gate-Source Spannung: `$ U_{GS_{max}} $`
+							- Gate-Ladung: `$ Q_{gs_{max}} $`
 						</textarea>
 					</section>
 					<section>
-						<h2>Mosfet and Driver</h2>
+						<h2>Mosfet und Treiber</h2>
 						<img class="r-stretch" src="dist/pictures/ir2104.svg">
 					</section>
 					<section>
-						<h2>Mosfet and Driver</h2>
+						<h2>Mosfet und Treiber</h2>
 						<img class="r-stretch" src="dist/pictures/mosfet.jpg">
 					</section>
 					<section>
-						<h2>Pulse with modulation</h2>
+						<h2>Pulsweitenmodulation</h2>
 						<p>Pythoncode:</p>
 						<pre><code class="language-python" data-trim data-noescape data-line-numbers="1|3-5|7-8|10-13">
 							from machine import Pin, PWM
@@ -389,7 +390,7 @@
 					</section>
 				</section>
 				<section>
-					<h2>Implementation</h2>
+					<h2>Implementierung</h2>
 					<div class="r-stack">
 						<img class="fragment" src="dist/pictures/Layout.svg" height="700">
 						<img class="fragment" src="dist/pictures/smd1.jpg">
@@ -399,16 +400,16 @@
 					</div>
 				</section>
 				<section>
-					<h2>Algorithms</h2>
+					<h2>Algorithmen</h2>
 				</section>
 				<section>
 					<section>
-						<h2>Algorithms</h2>
+						<h2>Algorithmen</h2>
 						<h4>Observe & Perturb</h4>
 						<img class="r-stretch" src="dist/pictures/observeperturbflow.svg">
 					</section>
 					<section>
-						<h2>Algorithms</h2>
+						<h2>Algorithmen</h2>
 						<h4>Observe & Perturb</h4>
 						<pre><code class="language-python" data-trim data-noescape
 														data-line-numbers="2-3|4-5|6-7|9-18|20-21">
@@ -436,20 +437,20 @@
 						</code></pre>
 					</section>
 					<section>
-						<h2>Algorithms</h2>
+						<h2>Algorithmen</h2>
 						<h4>Observe & Perturb</h4>
 						<div id="mpptcalc1"></div>
-						<p>Interactive with mouse</p>
+						<p>Interaktiv mit Maus</p>
 					</section>
 				</section>
 				<section>
 					<section>
-						<h2>Algorithms</h2>
-						<h4>VI-Scanner</h4>
+						<h2>Algorithmen</h2>
+						<h4>IU-Scanner</h4>
 					</section>
 					<section>
-						<h2>Algorithms</h2>
-						<h4>VI-Scanner</h4>
+						<h2>Algorithmen</h2>
+						<h4>IU-Scanner</h4>
 						<pre><code class="language-python" data-trim data-noescape
 							data-line-numbers="1|3-4|5|7-8|10|16-18|20|22">
 							power_curve =[] 
@@ -477,88 +478,88 @@
 						</code></pre>
 					</section>
 					<section>
-						<h2>Algorithms</h2>
-						<h4>VI-Scanner</h4>
+						<h2>Algorithmen</h2>
+						<h4>IU-Scanner</h4>
 						<div id="mpptcalc2"></div>
-						<p>Interactive with mouse</p>
+						<p>Interaktiv mit Maus</p>
 					</section>
 				</section>
 				<section>
 					<section>
-						<h2>PV emulator</h2>
+						<h2>PV-Emulator</h2>
 					</section>
 					<section>
-						<h2>PV emulator</h2>
+						<h2>PV-Emulator</h2>
 						<img class="r-stretch" src="dist/pictures/pv_emulator1.svg">						
 					</section>
 					<section>
-						<h2>PV emulator</h2>
+						<h2>PV-Emulator</h2>
 						<img class="r-stretch" src="dist/pictures/pv-emu1.svg">						
 					</section>
 					<section>
-						<h2>PV emulator</h2>
-						<p>shaded</p>
+						<h2>PV-Emulator</h2>
+						<p>verschattet</p>
 						<img class="r-stretch" src="dist/pictures/pv_emulator2.svg">						
 					</section>
 					<section>
 						<h2>PV-Emulator</h2>
-						<p>shaded</p>
+						<p>verschattet</p>
 						<img class="r-stretch" src="dist/pictures/pv-emu2.svg">						
 					</section>
 					<section>
-						<h2>PV emulator</h2>
+						<h2>PV-Emulator</h2>
 						<img class="r-stretch" src="dist/pictures/pvemulator.jpg">						
 					</section>
 				</section>
 				<section>
 					<section>
-						<h2>Practical experiment</h2>
+						<h2>Praktischer Versuch</h2>
 					</section>
 					<section>
 						<h2>Perturb & Observe</h2>
-						<p>not shaded</p>
+						<p>nicht verschattet</p>
 						<img class="r-stretch" src="dist/pictures/pv-emu-perturb.svg">
 					</section>
 					<section>
 						<h2>Perturb & Observe</h2>
-						<p>shaded</p>
+						<p>verschattet</p>
 						<img class="r-stretch" src="dist/pictures/pv-emu-perturb_verschattet.svg">
 					</section>
 					<section>
-						<h2>VI-Scanner</h2>
-						<p>not shaded</p>
+						<h2>IU-Scanner</h2>
+						<p>nicht verschattet</p>
 						<img class="r-stretch" src="dist/pictures/pv-emu-iu-scanner-unverschattet.svg">
 					</section>
 					<section>
-						<h2>VI-Scanner</h2>
-						<p>shaded</p>
+						<h2>IU-Scanner</h2>
+						<p>verschattet</p>
 						<img class="r-stretch" src="dist/pictures/pv-emu-iu-scanner-verschattet.svg">
 					</section>
 				</section>
 				<section data-markdown>
 					<textarea data-template>
-						## Conclusion
+						## Fazit
 
-						- Feasibility proven
-						- fast and easy development with Mircopython
-						- basic platform for new algorithms
-						- IU-Scanner algorithm superior
-						- use in teaching
+						- Machbarkeit bewiesen
+						- schnelle und einfache Entwicklung mit Mircopython
+						- grundlegende Platform für neue Algorithmen
+						- IU-Scanner Algorithmus überlegen
+						- Einsatz in der Lehre
 					</textarea>
 				</section>
 				<section data-markdown>
 					<textarea data-template>
-						## Outlook
+						## Ausblick
 
-						- testing "real" solar cell
-						- further sensors
-						- WLAN network capability
-						- web interface with real time data
-						- opensource: [mushroom_mppt](https://github.com/dulouie/mushroom_mppt)
+						- testen "realer" Solarzelle
+						- weitere Sensoren
+						- WLAN Netzwerkfähigkeit
+						- Weboberfläche mit Echtzeitdaten
+						- Opensource: [mushroom_mppt](https://github.com/dulouie/mushroom_mppt)
 					</textarea>
 				</section>
 				<section>
-					<h2>Thank you for your attention!</h2>
+					<h2>Danke für Ihre Aufmerksamkeit!</h2>
 						<div class="r-stack">
 							<img class="fragment" src="dist/pictures/hardware1.jpg">
 							<img class="fragment" src="dist/pictures/hardware2.jpg">
